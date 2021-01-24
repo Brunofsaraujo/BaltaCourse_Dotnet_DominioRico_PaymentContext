@@ -21,5 +21,15 @@ namespace PaymentContext.Tests
                 document: new Document("123.123.123-54", EDocumentType.CPF),
                 email: new Email("Teste@hotmail.com"));
         }
+
+        [TestMethod]
+        public void AdicionarAssinatura()
+        {
+            // var name = new Name("Teste", "Teste");
+            // foreach (var not in name.Notifications)
+            // {
+            //     not.Message;
+            // }
+        }
     }
 }
