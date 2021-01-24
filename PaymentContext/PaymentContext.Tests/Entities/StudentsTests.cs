@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PaymentContext.Domain.Entities;
+using PaymentContext.Domain.Enums;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Tests
 {
@@ -9,11 +11,15 @@ namespace PaymentContext.Tests
         [TestMethod]
         public void TestMethod()
         {
-            var student = new Student(
+            var name = new Name(
                 firstName: "Bruno",
-                lastName: "Araujo",
-                document: "123.123.123-54",
-                email: "Teste@hotmail.com");
+                lastName: "Araujo"
+            );
+
+            var student = new Student(
+                name: name,
+                document: new Document("123.123.123-54", EDocumentType.CPF),
+                email: new Email("Teste@hotmail.com"));
         }
     }
 }
